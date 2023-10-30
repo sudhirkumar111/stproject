@@ -9,7 +9,9 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+app.get('/',(req,res)=>{
+    res.send("<h1>Hello</h1>")
+})
 app.get('/getData', async (req, res) => {
     try {
         const stockList = await Stock.find();
