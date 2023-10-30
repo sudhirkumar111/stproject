@@ -27,6 +27,7 @@ app.get('/getData', async (req, res) => {
 
 app.patch('/update-price', async (req, res) => {
     try {
+        console.log(req.body,'++++++')
         const result = await Stock.updateOne({ _id: req.body.stockId }, { $set: { price: req.body.price } })
         console.log(result)
         res.send(result)
